@@ -1,2 +1,2 @@
-# hha504-pssp
-Assignment 7
+# HHA504: PssP
+## Assignment 7
