@@ -27,21 +27,10 @@ def droppingFunction_all(dbList, db_source):
 
 load_dotenv()
 
-AZURE_MYSQL_HOSTNAME = os.getenv("AZURE_MYSQL_HOSTNAME")
-AZURE_MYSQL_USER = os.getenv("AZURE_MYSQL_USERNAME")
-AZURE_MYSQL_PASSWORD = os.getenv("AZURE_MYSQL_PASSWORD")
-AZURE_MYSQL_DATABASE = os.getenv("AZURE_MYSQL_DATABASE")
-
-GCP_MYSQL_HOSTNAME = os.getenv("GCP_MYSQL_HOSTNAME")
-GCP_MYSQL_USER = os.getenv("GCP_MYSQL_USERNAME")
-GCP_MYSQL_PASSWORD = os.getenv("GCP_MYSQL_PASSWORD")
-GCP_MYSQL_DATABASE = os.getenv("GCP_MYSQL_DATABASE")
-
-GCP_MYSQL_HOSTNAME_2 = os.getenv("GCP_MYSQL_HOSTNAME_2")
-GCP_MYSQL_USER_2 = os.getenv("GCP_MYSQL_USERNAME_2")
-GCP_MYSQL_PASSWORD_2 = os.getenv("GCP_MYSQL_PASSWORD_2")
-GCP_MYSQL_DATABASE_2 = os.getenv("GCP_MYSQL_DATABASE_2")
-
+MYSQL_HOST = os.getenv("MYSQL_HOST")
+MYSQL_USERNAME = os.getenv("MYSQL_USERNAME")
+MYSQL_PASSWORD = os.getenv("MYSQL_PASSWORD")
+MYSQL_DATABASE = os.getenv("MYSQL_DATABASE")
 
 ########
 
@@ -50,9 +39,6 @@ db_azure = create_engine(connection_string_azure)
 
 connection_string_gcp = f'mysql+pymysql://{GCP_MYSQL_USER}:{GCP_MYSQL_PASSWORD}@{GCP_MYSQL_HOSTNAME}:3306/{GCP_MYSQL_DATABASE}'
 db_gcp = create_engine(connection_string_gcp)
-
-connection_string_gcp_2 = f'mysql+pymysql://{GCP_MYSQL_USER_2}:{GCP_MYSQL_PASSWORD_2}@{GCP_MYSQL_HOSTNAME_2}:3306/{GCP_MYSQL_DATABASE_2}'
-db_gcp_2 = create_engine(connection_string_gcp_2)
 
 #### note to self, need to ensure server_paremters => require_secure_transport is OFF in Azure 
 
